@@ -12,9 +12,13 @@
 ## Architecture
 
 ```bash
-Monitoring_Multipass/
+Monitoring_Observability_Multipass_VMs/
 ├─ README.md
 ├─ compose.yml
+├─ grafana/
+│  └─ provisioning/
+│     └─ datasources/
+│        └─ prometheus.yml
 └─ prometheus/
    └─ prometheus.yml
 ```
