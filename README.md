@@ -44,6 +44,9 @@ Grafana : `http://localhost:3000`
 - Login : Admin
 - Password : Admin
 
+Le lien de Grafana à Prometheus est fait grace a ce fichier :
+`/grafana/provisioning/datasources/prometheus.yml`
+
 ## Sources
 
 <https://blog.stephane-robert.info/docs/observabilite/>
