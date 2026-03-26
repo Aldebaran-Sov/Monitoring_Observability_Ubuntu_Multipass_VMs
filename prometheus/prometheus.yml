@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 5s # The default is every 1 minute.
+  evaluation_interval: 5s # The default is every 1 minute.
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+    - targets: ['prometheus:9090']
+  - job_name: <Vm-Name>
+    static_configs:
+    - targets: ['<Vm-Ip>:9100']
