@@ -29,7 +29,7 @@ multipass exec multipass-vm-1 -- sudo apt install -y prometheus-node-exporter
 
 !!! A voir automatisation de cette tache !!!
 
-## 2. Prometheus
+## 2. Prometheus & Grafana
 
 ``Penser à configuer prometheus.yml``
 
@@ -37,7 +37,12 @@ multipass exec multipass-vm-1 -- sudo apt install -y prometheus-node-exporter
 docker compose up -d
 ```
 
-`http://localhost:9090`
+Prometheus : `http://localhost:9090`
+
+Grafana : `http://localhost:3000`
+
+- Login : Admin
+- Password : Admin
 
 ## Sources
 

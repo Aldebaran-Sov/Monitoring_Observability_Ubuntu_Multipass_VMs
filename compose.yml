@@ -8,11 +8,30 @@ services:
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
       - prometheus-data:/prometheus
+    networks:
+      - monitoring
     healthcheck:
       test: ["CMD", "wget", "--spider", "-q", "http://localhost:9090/-/healthy"]
       interval: 10s
       timeout: 5s
       retries: 3
+  
+  grafana:
+    image: grafana/grafana-enterprise:12.3.6-security-01
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+    networks:
+      - monitoring
+    depends_on:
+      - prometheus
 
 volumes:
   prometheus-data:
+  grafana-data:
+
+networks:
+  monitoring:
+    driver: bridge
